@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         slider.value = currentHealth;
         if(currentHealth <= 0)
         {
-            return;
+            Respawn();
         }
     }
 
