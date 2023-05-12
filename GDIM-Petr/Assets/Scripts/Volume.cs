@@ -7,13 +7,21 @@ public class Volume : MonoBehaviour
 {
     [SerializeField]
     private Slider volumeSlider = null;
-
+    private bool pause = false;
     private string nam = "BG Music";
-    
-    public void OnOff(bool pause)
+ 
+    public void Pause()
     {
+        if(pause)
+        {
+            pause = false;
+        }else
+        {
+            pause = true;
+        }
         AudioManager.instance.Pause(nam, pause);
     }
+
 
     public void VolumeLevel(float num)
     {
