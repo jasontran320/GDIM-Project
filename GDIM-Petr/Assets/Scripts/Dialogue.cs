@@ -22,7 +22,14 @@ public class Dialogue : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            
 
         }
+    }
+
+    private void RandomizeDialogue()
+    {
+        int index = Random.Range(0, dialogue.Length);
+        
     }
 }
