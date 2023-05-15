@@ -9,9 +9,13 @@ public class Dialogue : MonoBehaviour
     [SerializeField]
     private string[] dialogue;
     [SerializeField]
-    private SpriteRenderer box;
+    private GameObject box;
     [SerializeField]
     private TMP_Text text;
+    [SerializeField]
+    private CapsuleCollider2D col;
+    [SerializeField]
+    private float dialogueCD;
 
     private void Start() 
     {
@@ -22,14 +26,24 @@ public class Dialogue : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            
-
+            StartCoroutine(DelayBox());
+            RandomizeDialogue();
         }
     }
+
 
     private void RandomizeDialogue()
     {
         int index = Random.Range(0, dialogue.Length);
-        
+        text.text = dialogue[index];
+    }
+
+    IEnumerator DelayBox()
+    {
+        box.SetActive(true);
+        col.enabled = false;
+        yield return new WaitForSeconds(dialogueCD);
+        col.enabled = true;
+        box.SetActive(false);
     }
 }
