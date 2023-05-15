@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float jumpForce;
     private bool grounded;
+    [SerializeField]
+    private Animator anim;
 
     private void Awake()
     {
@@ -22,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+        float animFloat = Mathf.Abs(horizontalInput);
+        anim.SetFloat("isMoving", animFloat);
 
         //Flip character based on movement direction
         if(horizontalInput < -0.01f)
@@ -38,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && grounded)
         {
             Jump();
+            anim.SetBool("isJumpp", true);
         }
     }
 
@@ -52,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "Ground")
         {
             grounded = true;
+            anim.SetBool("isJumpp", false);
         }
     }
     void CreateDust()
