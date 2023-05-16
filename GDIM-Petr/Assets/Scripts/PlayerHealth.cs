@@ -36,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         currentHealth -= dmg;
+        AudioManager.instance.Play("Hurt");
     }
 
     private void Respawn()
@@ -47,6 +48,7 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator Invincibility()
     {
+        AudioManager.instance.Play("Death");
         float tempspeed = this.gameObject.GetComponent<PlayerMovement>().speed;
         this.gameObject.GetComponent<PlayerMovement>().speed = 0;
         anim.SetBool("isDead", true);
@@ -55,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
         anim.SetBool("isDead", false);
         this.gameObject.tag = "Player";
         this.gameObject.GetComponent<PlayerMovement>().speed = tempspeed;
+        AudioManager.instance.Play("Spawn");
     }
 
     private void OnTriggerEnter2D(Collider2D other) 

@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         CreateDust();
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        AudioManager.instance.Play("Jump");
         grounded = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)

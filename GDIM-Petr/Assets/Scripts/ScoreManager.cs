@@ -65,6 +65,9 @@ public class ScoreManager : MonoBehaviour
         {
             EndTimer();
             CalculateScore();
+            EndScreen();
+            AudioManager.instance.Play("Victory");
+            col.GetComponent<PlayerMovement>().enabled = false;
         }
     }
 

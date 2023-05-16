@@ -295,6 +295,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1780714822}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &19223090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2121,6 +2133,41 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+    delay: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: d91509e869a2874458b5b20ed7cce7f7, type: 3}
+    volume: 0.699
+    pitch: 1
+    loop: 0
+    delay: 0
+    source: {fileID: 0}
+  - name: Death
+    clip: {fileID: 8300000, guid: 23796a67d275d8844bbc3fffac154cb0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    delay: 0
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: 8ae8c0697ff26b245830d0688e7a0a82, type: 3}
+    volume: 0.725
+    pitch: 1
+    loop: 0
+    delay: 0
+    source: {fileID: 0}
+  - name: Spawn
+    clip: {fileID: 8300000, guid: 1ffaa60367c4ce146b751ea9bbfaca3f, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    delay: 0
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: 85fda42c17228f847b615821376a0d19, type: 3}
+    volume: 0.741
+    pitch: 1
+    loop: 0
     delay: 0
     source: {fileID: 0}
 --- !u!1 &563400574

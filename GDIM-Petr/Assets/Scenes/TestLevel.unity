@@ -11836,7 +11836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerTxt: {fileID: 1534672894}
   ScoreTxt: {fileID: 288601250}
-  endScreen: {fileID: 0}
+  endScreen: {fileID: 699141636}
   enemiesKilled: 0
 --- !u!61 &348524930
 BoxCollider2D:
@@ -12942,11 +12942,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4124792527282555571, guid: ceebfc88a11aed444b49ea0542826ffe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0762142
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4124792527282555571, guid: ceebfc88a11aed444b49ea0542826ffe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.68813694
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4124792527282555571, guid: ceebfc88a11aed444b49ea0542826ffe, type: 3}
       propertyPath: m_LocalPosition.z
