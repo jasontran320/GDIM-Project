@@ -6,11 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public ParticleSystem dust;
     private Rigidbody2D rb;
-    [SerializeField]
-    private float speed;
+    public float speed;
     [SerializeField]
     private float jumpForce;
-    private bool grounded;
+    public bool grounded;
     [SerializeField]
     private Animator anim;
 

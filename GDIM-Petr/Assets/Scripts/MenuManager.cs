@@ -12,6 +12,16 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void Back()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
@@ -32,6 +42,7 @@ public class MenuManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Settings.enabled = true;
+            Pause();
         }
     }
 }

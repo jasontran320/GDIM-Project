@@ -8,6 +8,8 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField]
     private TMP_Text TimerTxt, ScoreTxt;
+    [SerializeField]
+    private Canvas endScreen;
     public int enemiesKilled;
     private bool timerGoing;
     private float timeElapsed;
@@ -22,6 +24,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         StartTimer();
+        endScreen.enabled = false;
     }
 
     private void StartTimer()
@@ -63,5 +66,10 @@ public class ScoreManager : MonoBehaviour
             EndTimer();
             CalculateScore();
         }
+    }
+
+    private void EndScreen()
+    {
+        endScreen.enabled = true;
     }
 }

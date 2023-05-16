@@ -8,10 +8,12 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private int maxHealth, invincibilityLength;
     [SerializeField]
-    private Transform respawn;
+    private Transform respawn, death;
     [SerializeField]
     private Slider slider;
-   // private Animator anim;
+    [SerializeField]
+    private Animator anim;
+    private float tempspeed;
 
     public int currentHealth;
     // Start is called before the first frame update
@@ -38,19 +40,29 @@ public class PlayerHealth : MonoBehaviour
 
     private void Respawn()
     {
-        //stop movement
         currentHealth = maxHealth;
         this.transform.position = respawn.position;
         StartCoroutine(Invincibility());
-        
     }
 
     private IEnumerator Invincibility()
     {
-        //play blinking here
-        //change tag to invincible ****Make sure that the enemies can only dmg the player if they are on the "Player" tag****
+        float tempspeed = this.gameObject.GetComponent<PlayerMovement>().speed;
+        this.gameObject.GetComponent<PlayerMovement>().speed = 0;
+        anim.SetBool("isDead", true);
+        this.gameObject.tag = "Invincible";
         yield return new WaitForSeconds(invincibilityLength);
-        //stop blinking here
-        //change tag back to player
+        anim.SetBool("isDead", false);
+        this.gameObject.tag = "Player";
+        this.gameObject.GetComponent<PlayerMovement>().speed = tempspeed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.tag == "Death")
+        {
+            this.transform.position = death.position;
+            StartCoroutine(Invincibility());
+        }
     }
 }
