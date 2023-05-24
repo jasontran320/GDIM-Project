@@ -4976,8 +4976,8 @@ GameObject:
   - component: {fileID: 4124792527282555470}
   - component: {fileID: 4124792527282555570}
   - component: {fileID: 4124792527282555572}
-  - component: {fileID: 4124792527282555573}
   - component: {fileID: 490914101}
+  - component: {fileID: 5892914355302326545}
   m_Layer: 0
   m_Name: PEtr
   m_TagString: Player
@@ -5042,6 +5042,7 @@ MonoBehaviour:
   dust: {fileID: 1073052557}
   speed: 8
   jumpForce: 20
+  grounded: 0
   anim: {fileID: 490914101}
 --- !u!114 &4124792527282555572
 MonoBehaviour:
@@ -5056,26 +5057,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  invincibilityLength: 1
-  respawn: {fileID: 4124792528035075551}
+  invincibilityLength: 2
+  respawn: {fileID: 0}
   slider: {fileID: 4124792527290785558}
+  anim: {fileID: 490914101}
   currentHealth: 0
---- !u!70 &4124792527282555573
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4124792527282555468}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: a5a95774a0203df4abbdca9751b734c3, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.085381985}
-  m_Size: {x: 1.28, y: 2.1807642}
-  m_Direction: 0
 --- !u!95 &490914101
 Animator:
   serializedVersion: 5
@@ -5097,6 +5083,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &5892914355302326545
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4124792527282555468}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: a5a95774a0203df4abbdca9751b734c3, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00054347515, y: -0.19965386}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1290388, y: 1.9910874}
+  m_EdgeRadius: 0
 --- !u!1 &4124792527290785556
 GameObject:
   m_ObjectHideFlags: 0

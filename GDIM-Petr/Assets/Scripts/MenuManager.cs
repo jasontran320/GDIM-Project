@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField]
     private Canvas Settings;
+    private bool pause;
+
+    private void Start() 
+    {
+        Settings = Volume.instance.gameObject.GetComponent<Canvas>();
+    }
     public void Next()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -41,8 +46,18 @@ public class MenuManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Settings.enabled = true;
-            Pause();
+            if(pause)
+            {
+                pause = false;
+                Settings.enabled = false;
+                Resume();
+            }else
+            {
+                pause = true;
+                Settings.enabled = true;
+                Pause();
+            }
         }
     }
+    
 }

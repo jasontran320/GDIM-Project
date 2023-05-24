@@ -230,9 +230,10 @@ GameObject:
   - component: {fileID: 3796748410209303902}
   - component: {fileID: 3796748410209303900}
   - component: {fileID: 3796748410209303899}
+  - component: {fileID: 700695881}
   m_Layer: 0
   m_Name: Anderson
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,6 +292,18 @@ MonoBehaviour:
   text: {fileID: 3796748409644070915}
   col: {fileID: 3796748410209303900}
   dialogueCD: 4
+--- !u!114 &700695881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796748410209303903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af7cbbfb2e9b6941b89108dcad1244a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3796748410809264411
 GameObject:
   m_ObjectHideFlags: 0

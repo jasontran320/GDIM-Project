@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private int maxHealth, invincibilityLength;
     [SerializeField]
-    private Transform respawn, death;
+    private Transform respawn;
     [SerializeField]
     private Slider slider;
     [SerializeField]
@@ -36,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         currentHealth -= dmg;
+        anim.SetTrigger("Hurt");
         AudioManager.instance.Play("Hurt");
     }
 
@@ -64,8 +65,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.tag == "Death")
         {
-            this.transform.position = death.position;
+            Respawn();
             StartCoroutine(Invincibility());
+        }
+
+        if(other.tag == "Checkpoint")
+        {
+            respawn = other.transform;
         }
     }
 }

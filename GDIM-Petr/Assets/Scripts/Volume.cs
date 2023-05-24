@@ -6,9 +6,24 @@ using UnityEngine.UI;
 public class Volume : MonoBehaviour
 {
     [SerializeField]
-    private Slider volumeSlider = null;
+    private Slider musicSlider = null;
+    [SerializeField]
+    private Slider sfxSlider = null;
     private bool pause = false;
     private string nam = "BG Music";
+    public static Volume instance;
+    
+    private void Awake() {
+
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
  
     public void Pause()
     {
@@ -22,11 +37,22 @@ public class Volume : MonoBehaviour
         AudioManager.instance.Pause(nam, pause);
     }
 
-
-    public void VolumeLevel(float num)
+    private void Update() 
     {
-        num = volumeSlider.value;
-        AudioManager.instance.Volume(nam, num);
+
+        AudioManager.instance.Volume(nam, musicSlider.value);
+
+        for(int i = 1; i < AudioManager.instance.sounds.Length; i++) 
+        {
+            Sound s = AudioManager.instance.sounds[i];
+            AudioManager.instance.Volume(s.name, sfxSlider.value);
+        }    
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
 
 }

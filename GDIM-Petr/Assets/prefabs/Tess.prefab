@@ -146,9 +146,10 @@ GameObject:
   - component: {fileID: 5270683110619714438}
   - component: {fileID: 5270683110619714436}
   - component: {fileID: 5270683110619714435}
+  - component: {fileID: 809007056}
   m_Layer: 0
   m_Name: Tess
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,6 +209,18 @@ MonoBehaviour:
   text: {fileID: 5270683110054516443}
   col: {fileID: 5270683110619714436}
   dialogueCD: 4
+--- !u!114 &809007056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270683110619714439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af7cbbfb2e9b6941b89108dcad1244a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5270683111221282755
 GameObject:
   m_ObjectHideFlags: 0

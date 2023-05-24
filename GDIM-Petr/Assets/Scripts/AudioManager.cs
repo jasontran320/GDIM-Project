@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     //This is to make sure we only have one instance of the audio manager between scenes
     public static AudioManager instance;
+
     // Start is called before the first frame update
     void Awake()
     {

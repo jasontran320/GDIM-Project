@@ -147,9 +147,10 @@ GameObject:
   - component: {fileID: 1857580398106507625}
   - component: {fileID: 1857580398106507624}
   - component: {fileID: 1857580398106507630}
+  - component: {fileID: 870610376}
   m_Layer: 0
   m_Name: Cushing
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,6 +263,18 @@ MonoBehaviour:
   text: {fileID: 1857580397597899830}
   col: {fileID: 1857580398106507625}
   dialogueCD: 4
+--- !u!114 &870610376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857580398106507626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af7cbbfb2e9b6941b89108dcad1244a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1857580398612098350
 GameObject:
   m_ObjectHideFlags: 0
